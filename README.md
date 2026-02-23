@@ -27,4 +27,3 @@ Create a typ_proj_config.json file in your project root:
   "root": "optional/root/path"
 }
 ```
-I added a funny line
