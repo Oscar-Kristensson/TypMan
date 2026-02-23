@@ -42,15 +42,17 @@ def compile():
         fontPath = None
 
     root = safeLoad(data, "root", "")
+    outputName = safeLoad(data, "name", relativeDocumentPath)
 
     docPath = os.getcwd() + "/" + relativeDocumentPath
 
 
 
 
-    compileTypstDocToPDF(docPath, ignoreSystemFonts, fontPath, root)
+    compileTypstDocToPDF(docPath + ".typ", ignoreSystemFonts, fontPath, root)
 
-    shutil.copy2(docPath)
+    
+    shutil.move(docPath+".pdf", os.getcwd() + "/" + outputName + ".pdf")
 
 
     
