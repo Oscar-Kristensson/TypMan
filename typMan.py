@@ -1,4 +1,5 @@
 from utils import clearTerminal, printHeading, compileTypstDocToPDF, actionList, safeLoad
+from generate import generatePage
 import json
 import os
 import shutil
@@ -73,6 +74,10 @@ def mainPage():
             "name": "Compile",
             "func": compile
         },
+        {
+            "name": "Generate project",
+            "func": generatePage,
+        }
     ])
 
 

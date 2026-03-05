@@ -86,3 +86,6 @@ def safeLoad(dict: dict, key: str, catchValue):
     
     return dict[key]
 
+def askUser(prompt, cleanLines = 3):
+    print("\n" * cleanLines, end="")
+    return input(f"{prompt}\n> ")
