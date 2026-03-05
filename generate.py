@@ -57,17 +57,23 @@ Default: ""
 To use the default, press enter 
 """)
     
-    if rootPath == "":
-        rootPath = ""
 
+    # Generating the string
 
 
     string = "{" + f"""
-        "documentPath": "{documentPath}",
-        "fonts": "{fontPath}",
-        "name": "{outputDocumentName}",
-        "root": "{rootPath}"
-    """ + "}"
+    "documentPath": "{documentPath}",
+    "fonts": "{fontPath}",
+    "name": "{outputDocumentName}"
+    """
+
+
+    if rootPath != "":
+        string += f""",\n\t"root": "{rootPath}" """
+
+    
+
+    string += "\n}"
 
 
     createFolderStructure = askUser("Create folder structure (Y/n)")
